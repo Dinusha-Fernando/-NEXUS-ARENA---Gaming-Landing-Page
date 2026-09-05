@@ -1,26 +1,201 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-void: #050508;
+  --color-void-surface: #080811;
+  --color-void-card: #0D0D16;
+  --color-void-border: #1F1F2E;
+  --color-void-border-glow: #2D2D42;
+
+  --color-cyber-cyan: #00E5FF;
+  --color-electric-violet: #7C3AED;
+  --color-magenta-glow: #FF2D75;
+  --color-amber-solar: #F59E0B;
+  --color-emerald-matrix: #10B981;
+
+  --font-orbitron: var(--font-orbitron), sans-serif;
+  --font-rajdhani: var(--font-rajdhani), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F1F2E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Cyber Utilities & Visual FX */
+.cyber-chamfer {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+.cyber-chamfer-top-right {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    0 100%
+  );
+}
+
+.cyber-chamfer-small {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+.cyber-chamfer-bottom-left {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
+}
+
+/* Atmospheric Grids & Scanlines */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+.cyber-grid-cyan {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+}
+
+.cyber-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Neon Glows */
+.glow-cyan {
+  box-shadow: 0 0 30px -5px rgba(0, 229, 255, 0.35);
+}
+
+.glow-violet {
+  box-shadow: 0 0 30px -5px rgba(124, 58, 237, 0.45);
+}
+
+.glow-magenta {
+  box-shadow: 0 0 30px -5px rgba(255, 45, 117, 0.45);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 16px rgba(0, 229, 255, 0.6);
+}
+
+.text-glow-violet {
+  text-shadow: 0 0 20px rgba(124, 58, 237, 0.7);
+}
+
+.text-glow-magenta {
+  text-shadow: 0 0 20px rgba(255, 45, 117, 0.7);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(13, 13, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(13, 13, 22, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+/* Cyber Radar Sweep Animation */
+@keyframes radar-sweep {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-radar {
+  animation: radar-sweep 5s linear infinite;
 }
+
+/* Subtle Floating Animation */
+@keyframes cyber-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: cyber-float 6s ease-in-out infinite;
+}
+
+/* Pulse Border Animation */
+@keyframes border-glow-pulse {
+  0%, 100% {
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+  }
+  50% {
+    border-color: rgba(124, 58, 237, 0.7);
+    box-shadow: 0 0 25px rgba(124, 58, 237, 0.4);
+  }
+}
+
+.animate-pulse-border {
+  animation: border-glow-pulse 4s ease-in-out infinite;
+}
+
+/* Sound Wave bars */
+@keyframes wave-bounce {
+  0%, 100% {
+    height: 4px;
+  }
+  50% {
+    height: 22px;
+  }
+}
+
+.wave-bar-1 { animation: wave-bounce 0.8s ease-in-out infinite; }
+.wave-bar-2 { animation: wave-bounce 0.6s ease-in-out infinite 0.2s; }
+.wave-bar-3 { animation: wave-bounce 1.1s ease-in-out infinite 0.4s; }
+.wave-bar-4 { animation: wave-bounce 0.7s ease-in-out infinite 0.1s; }
+.wave-bar-5 { animation: wave-bounce 0.9s ease-in-out infinite 0.3s; }

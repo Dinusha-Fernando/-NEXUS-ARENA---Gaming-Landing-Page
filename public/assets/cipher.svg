@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-cipher" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050807" />
+      <stop offset="50%" stop-color="#08140f" />
+      <stop offset="100%" stop-color="#030504" />
+    </linearGradient>
+    <linearGradient id="emerald-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="matrix-blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#bg-cipher)" />
+
+  <!-- Digital Grid & Circuit Lines -->
+  <g stroke="#10B981" stroke-width="1" opacity="0.15">
+    <line x1="100" y1="0" x2="100" y2="800" />
+    <line x1="300" y1="0" x2="300" y2="800" />
+    <line x1="500" y1="0" x2="500" y2="800" />
+    <line x1="0" y1="200" x2="600" y2="200" />
+    <line x1="0" y1="400" x2="600" y2="400" />
+    <line x1="0" y1="600" x2="600" y2="600" />
+  </g>
+
+  <!-- Ambient Hologram Glow -->
+  <circle cx="300" cy="380" r="190" fill="#10B981" opacity="0.1" filter="url(#matrix-blur)" />
+
+  <!-- Tactician Silhouette -->
+  <g transform="translate(300, 420)">
+    <!-- Long Cyber Trench Coat / Cape -->
+    <polygon points="-80,-80 80,-80 120,240 -120,240" fill="#0c1813" stroke="#10B981" stroke-width="2" opacity="0.9" />
+
+    <!-- Sleek Tech Torso -->
+    <polygon points="-50,-120 50,-120 40,60 -40,60" fill="#13231c" stroke="#10B981" stroke-width="2" />
+    <!-- Glowing Neural Bus -->
+    <path d="M 0,-100 L 0,40 M -20,-80 L -20,20 M 20,-80 L 20,20" stroke="#10B981" stroke-width="3" filter="url(#matrix-blur)" />
+
+    <!-- High Collar & Cybernetic Head / Mask -->
+    <polygon points="-25,-140 25,-140 20,-210 0,-225 -20,-210" fill="#1c3328" stroke="#10B981" stroke-width="2" />
+    <!-- Monocle / Tactical AR Optic -->
+    <circle cx="8" cy="-185" r="10" fill="#050508" stroke="#10B981" stroke-width="2" />
+    <circle cx="8" cy="-185" r="5" fill="#10B981" filter="url(#matrix-blur)" />
+    <!-- Optic Stream Lines -->
+    <line x1="18" y1="-185" x2="160" y2="-185" stroke="#10B981" stroke-width="1.5" stroke-dasharray="4 4" filter="url(#matrix-blur)" />
+
+    <!-- Left Arm with Holographic Wrist Gauntlet Screen -->
+    <rect x="-85" y="-70" width="30" height="130" rx="6" fill="#13231c" stroke="#10B981" stroke-width="2" />
+    <rect x="-160" y="-30" width="80" height="45" rx="4" fill="rgba(16, 185, 129, 0.2)" stroke="#10B981" stroke-width="1.5" filter="url(#matrix-blur)" />
+    <text x="-120" y="-8" fill="#10B981" font-family="monospace" font-size="9" text-anchor="middle">EMP LOCKED</text>
+
+    <!-- Right Arm Holding DMR Rifle -->
+    <rect x="55" y="-70" width="30" height="130" rx="6" fill="#13231c" stroke="#10B981" stroke-width="2" />
+    <polygon points="70,-20 190,-40 210,10 80,40" fill="#0f1d16" stroke="#10B981" stroke-width="2" />
+
+    <!-- Legs -->
+    <polygon points="-35,70 -10,70 -15,260 -45,260" fill="#0e1b14" stroke="#10B981" stroke-width="1.5" />
+    <polygon points="35,70 10,70 15,260 45,260" fill="#0e1b14" stroke="#10B981" stroke-width="1.5" />
+
+    <!-- Floating Recon Drone Swarm (Twin Drones) -->
+    <g transform="translate(-180, -160)">
+      <polygon points="0,-15 25,0 0,15 -25,0" fill="#13231c" stroke="#10B981" stroke-width="2" />
+      <circle cx="0" cy="0" r="6" fill="#10B981" filter="url(#matrix-blur)" />
+      <line x1="-35" y1="0" x2="-15" y2="0" stroke="#10B981" stroke-width="2" />
+      <line x1="15" y1="0" x2="35" y2="0" stroke="#10B981" stroke-width="2" />
+    </g>
+    <g transform="translate(180, -180)">
+      <polygon points="0,-15 25,0 0,15 -25,0" fill="#13231c" stroke="#10B981" stroke-width="2" />
+      <circle cx="0" cy="0" r="6" fill="#10B981" filter="url(#matrix-blur)" />
+      <line x1="-35" y1="0" x2="-15" y2="0" stroke="#10B981" stroke-width="2" />
+      <line x1="15" y1="0" x2="35" y2="0" stroke="#10B981" stroke-width="2" />
+    </g>
+  </g>
+
+  <!-- HUD Code Matrix overlay -->
+  <g font-family="monospace" font-size="11" fill="#10B981" opacity="0.85">
+    <text x="40" y="60">OPERATIVE // CIPHER</text>
+    <text x="40" y="80" fill="#A1A1AA">ROLE // TACTICIAN &amp; CYBER-WARFARE</text>
+    <text x="40" y="100">SUB-NET STATUS // INFILTRATED</text>
+    <text x="560" y="60" text-anchor="end">DRONE_LINK // SYNCED</text>
+    <text x="560" y="80" text-anchor="end" fill="#A1A1AA">RADAR INTERFERENCE // 98%</text>
+  </g>
+</svg>

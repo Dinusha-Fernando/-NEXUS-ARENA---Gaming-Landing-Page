@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#FF2D75" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <filter id="trophy-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" fill="#050508" />
+
+  <!-- Background Cyber Sun / Aura -->
+  <circle cx="300" cy="270" r="180" fill="#7C3AED" opacity="0.15" filter="url(#trophy-glow)" />
+  <circle cx="300" cy="270" r="120" fill="#FF2D75" opacity="0.15" filter="url(#trophy-glow)" />
+
+  <!-- Radiating Tournament Stars / Beams -->
+  <g stroke="#00E5FF" stroke-width="1" opacity="0.2">
+    <line x1="300" y1="270" x2="100" y2="70" />
+    <line x1="300" y1="270" x2="500" y2="70" />
+    <line x1="300" y1="270" x2="50" y2="270" />
+    <line x1="300" y1="270" x2="550" y2="270" />
+  </g>
+
+  <!-- Championship Pedestal / Base -->
+  <polygon points="200,480 400,480 370,440 230,440" fill="#131322" stroke="#00E5FF" stroke-width="2" />
+  <polygon points="230,440 370,440 350,380 250,380" fill="#1e1b33" stroke="#7C3AED" stroke-width="2" />
+  <rect x="250" y="450" width="100" height="20" rx="3" fill="#080811" stroke="#FF2D75" stroke-width="1.5" />
+  <text x="300" y="464" fill="#00E5FF" font-family="monospace" font-size="10" font-weight="bold" text-anchor="middle">$50,000 MAJOR</text>
+
+  <!-- Trophy Cup Body & Cyber Wings -->
+  <!-- Left Wing Handle -->
+  <path d="M 240,320 C 140,290 140,160 250,170 C 230,210 235,270 240,320 Z" fill="#18172c" stroke="url(#gold-grad)" stroke-width="3" filter="url(#trophy-glow)" />
+  <!-- Right Wing Handle -->
+  <path d="M 360,320 C 460,290 460,160 350,170 C 370,210 365,270 360,320 Z" fill="#18172c" stroke="url(#gold-grad)" stroke-width="3" filter="url(#trophy-glow)" />
+
+  <!-- Center Chalice Structure -->
+  <polygon points="230,220 370,220 340,360 260,360" fill="#0f0e1d" stroke="#00E5FF" stroke-width="3" />
+
+  <!-- Floating Crystal Core -->
+  <polygon points="300,160 340,250 300,320 260,250" fill="url(#gold-grad)" filter="url(#trophy-glow)" opacity="0.9" />
+  <polygon points="300,160 320,250 300,320 280,250" fill="#ffffff" opacity="0.6" />
+
+  <!-- Season 04 Insignia Crown -->
+  <polygon points="300,100 325,140 300,130 275,140" fill="#00E5FF" filter="url(#trophy-glow)" />
+  <text x="300" y="260" fill="#ffffff" font-family="sans-serif" font-size="20" font-weight="900" text-anchor="middle">S4</text>
+
+  <!-- Typography -->
+  <text x="300" y="530" fill="#ffffff" font-family="monospace" font-size="16" font-weight="bold" letter-spacing="4" text-anchor="middle">NEXUS CHAMPIONSHIP</text>
+  <text x="300" y="555" fill="#A1A1AA" font-family="monospace" font-size="11" letter-spacing="2" text-anchor="middle">TOKYO GRAND FINALS 2026</text>
+</svg>

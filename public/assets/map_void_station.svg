@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-space" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020204" />
+      <stop offset="50%" stop-color="#07060f" />
+      <stop offset="100%" stop-color="#020104" />
+    </linearGradient>
+    <filter id="space-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg-space)" />
+
+  <!-- Stars & Distant Nebula -->
+  <circle cx="150" cy="80" r="1.5" fill="#ffffff" opacity="0.8" />
+  <circle cx="280" cy="50" r="1" fill="#ffffff" opacity="0.6" />
+  <circle cx="640" cy="90" r="2" fill="#00E5FF" opacity="0.9" />
+  <circle cx="720" cy="180" r="1" fill="#ffffff" opacity="0.7" />
+  <circle cx="110" cy="320" r="1.5" fill="#FF2D75" opacity="0.7" />
+  <!-- Distant Earth Limb Curve -->
+  <path d="M -100,550 Q 400,280 900,550" fill="none" stroke="#00E5FF" stroke-width="12" opacity="0.25" filter="url(#space-glow)" />
+
+  <!-- Orbital Station Rotating Ring Structure -->
+  <g transform="translate(400, 220)">
+    <!-- Central Hub -->
+    <circle cx="0" cy="0" r="45" fill="#141424" stroke="#FF2D75" stroke-width="3" />
+    <circle cx="0" cy="0" r="25" fill="#050508" stroke="#00E5FF" stroke-width="2" />
+    <circle cx="0" cy="0" r="10" fill="#FF2D75" filter="url(#space-glow)" />
+
+    <!-- 4 Radial Spoke Walkways -->
+    <line x1="-190" y1="0" x2="190" y2="0" stroke="#25253d" stroke-width="12" />
+    <line x1="0" y1="-190" x2="0" y2="190" stroke="#25253d" stroke-width="12" />
+    <line x1="-190" y1="0" x2="190" y2="0" stroke="#00E5FF" stroke-width="2" />
+    <line x1="0" y1="-190" x2="0" y2="190" stroke="#00E5FF" stroke-width="2" />
+
+    <!-- Outer Zero-G Habitation Ring -->
+    <circle cx="0" cy="0" r="190" fill="none" stroke="#18182c" stroke-width="24" />
+    <circle cx="0" cy="0" r="202" fill="none" stroke="#FF2D75" stroke-width="2" opacity="0.8" />
+    <circle cx="0" cy="0" r="178" fill="none" stroke="#00E5FF" stroke-width="2" opacity="0.8" />
+
+    <!-- Solar Array Wings Left and Right -->
+    <g transform="translate(-270, 0)">
+      <rect x="-70" y="-35" width="70" height="70" fill="#0c182c" stroke="#00E5FF" stroke-width="2" />
+      <line x1="-70" y1="0" x2="0" y2="0" stroke="#00E5FF" stroke-width="1.5" />
+      <line x1="-35" y1="-35" x2="-35" y2="35" stroke="#00E5FF" stroke-width="1.5" />
+    </g>
+    <g transform="translate(270, 0)">
+      <rect x="0" y="-35" width="70" height="70" fill="#0c182c" stroke="#00E5FF" stroke-width="2" />
+      <line x1="0" y1="0" x2="70" y2="0" stroke="#00E5FF" stroke-width="1.5" />
+      <line x1="35" y1="-35" x2="35" y2="35" stroke="#00E5FF" stroke-width="1.5" />
+    </g>
+
+    <!-- Depressurization Hazard Markers -->
+    <circle cx="-190" cy="0" r="8" fill="#FF2D75" filter="url(#space-glow)" />
+    <circle cx="190" cy="0" r="8" fill="#FF2D75" filter="url(#space-glow)" />
+    <circle cx="0" cy="-190" r="8" fill="#00E5FF" filter="url(#space-glow)" />
+    <circle cx="0" cy="190" r="8" fill="#00E5FF" filter="url(#space-glow)" />
+  </g>
+
+  <!-- HUD Telemetry Overlay -->
+  <rect x="20" y="20" width="240" height="40" rx="4" fill="rgba(10, 10, 20, 0.85)" stroke="#FF2D75" stroke-width="1" />
+  <text x="32" y="38" fill="#FF2D75" font-family="monospace" font-size="10" font-weight="bold">SECTOR // 03-ORBIT</text>
+  <text x="32" y="52" fill="#A1A1AA" font-family="monospace" font-size="9">VOID STATION KRONOS • 0.0G VACUUM</text>
+</svg>
